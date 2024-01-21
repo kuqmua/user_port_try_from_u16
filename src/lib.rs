@@ -2,7 +2,7 @@
 pub fn user_port_try_from_u16(
     possible_u16_token_stream: proc_macro::TokenStream,
 ) -> proc_macro::TokenStream {
-    proc_macro_helpers::panic_location::panic_location();
+    proc_macro_common::panic_location::panic_location();
     let valid_port = match possible_u16_token_stream.to_string().parse::<u16>() {
         Err(e) => panic!("failed to parse input into u16, error: {e}"),
         Ok(possible_port) => {
